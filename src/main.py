@@ -28,7 +28,7 @@ if __name__ == '__main__':
     # 3) If this is the case:
     #      - Generate ascii art from the commit message using pyfiglet 
     #      - Write the ascii art to haiku.md
-    #      - Commit and push the results! 
+    #      - Commit and push the result
     # 
     if is_haiku(get_latest_commit_message(pull_request)):
         ascii_art = pyfiglet.figlet_format(get_latest_commit_message)
