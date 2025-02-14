@@ -31,7 +31,7 @@ if __name__ == '__main__':
     #      - Commit and push the result
     # 
     if is_haiku(get_latest_commit_message(pull_request)):
-        ascii_art = pyfiglet.figlet_format(get_latest_commit_message)
+        ascii_art = pyfiglet.figlet_format(get_latest_commit_message(pull_request))
 
         with open(file_path, "w") as f:
             f.write(ascii_art)
