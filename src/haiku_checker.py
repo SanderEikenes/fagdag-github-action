@@ -27,14 +27,14 @@ def count_syllables_in_line(line: str) -> int:
     return syllableSum
 
 def count_syllables(word: str) -> int:
-    #"""Count vowel groups in a word. Remove silent e unless word ends with le"""
+    #"""Count vowel groups in a word. Remove silent e unless word enwith """
     word = word.lower()
     if word.endswith("e"):
         if not word.endswith("le"):
             word = word[:-1]
 
     syllables = re.findall(r'[aeiouy]+', word)
-
+    #endring
     return max(1, len(syllables))
 
 print(count_syllables("beautiful"))
