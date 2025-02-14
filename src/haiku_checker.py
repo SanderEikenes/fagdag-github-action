@@ -27,7 +27,7 @@ def count_syllables_in_line(line: str) -> int:
     return syllableSum
 
 def count_syllables(word: str) -> int:
-    #"""Count vowel groups in a word. Remove silent e unless word ends with """
+    #"""Count vowel groups in a word. Remove silent e unless word enwith """
     word = word.lower()
     if word.endswith("e"):
         if not word.endswith("le"):
