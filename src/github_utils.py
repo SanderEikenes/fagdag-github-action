@@ -1,9 +1,10 @@
 from github import PullRequest, InputGitAuthor, Repository
 
 def get_latest_commit_message(pull_request : PullRequest) -> list[str]:
+    latestCommitMessage = ""
     for commit in pull_request.get_commits():
-        print(commit.commit.message)
-        return commit.commit.message
+        latestCommitMessage = commit.commit.message
+    return latestCommitMessage
 
 def commit_and_push(repo: Repository, target_branch:str, file_path: str) -> None:
     author = InputGitAuthor(
@@ -14,5 +15,11 @@ def commit_and_push(repo: Repository, target_branch:str, file_path: str) -> None
         new_file_content = f.read()
 
     ##TODO use update_file from github.Repository to push the new file contents to the open PR 
-
-get_latest_commit_message(PullRequest)
+    repo.update_file(
+        remote_file.path,
+        "",
+        new_file_content,
+        remote_file.sha,
+        branch = target_branch,
+        author = author
+    )
