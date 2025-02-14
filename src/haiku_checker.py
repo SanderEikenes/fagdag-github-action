@@ -34,7 +34,7 @@ def count_syllables(word: str) -> int:
             word = word[:-1]
 
     syllables = re.findall(r'[aeiouy]+', word)
-
+    #endring
     return max(1, len(syllables))
 
 print(count_syllables("beautiful"))
